@@ -78,5 +78,4 @@ heatmaply(mean_de_logCPM,
           show_dendrogram = c(TRUE, FALSE), 
           cexRow = FALSE, 
           showticklabels = c(TRUE, FALSE),
-          file = c(str_c("Results/draft_heatmap_", today, ".png"), 
-                   str_c("Results/draft_heatmap_", today, ".html")))
+          file = c(str_c("Results/Figures/Fraser_Fir_MeJa_needles_heatmap_", today, ".html")))

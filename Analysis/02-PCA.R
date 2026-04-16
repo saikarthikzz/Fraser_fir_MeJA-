@@ -19,11 +19,6 @@ today <- format(today, "%Y%m%d")
 logCPM <- read_delim("Results/Fraser_Fir_MeJa_Needles_logCPM_20250401.txt", 
                      col_names = TRUE, show_col_types = FALSE)
 
-# Remove outliers
-# logCPM <- logCPM[, -which(names(logCPM) == "G97MN3")]
-# logCPM <- logCPM[, -which(names(logCPM) == "G85CN3")]
-
-
 # Remove first column header to run PCA
 logCPM <- as.data.frame(logCPM) |> 
   column_to_rownames('contig')
@@ -54,6 +49,6 @@ g <-  ggplot(dat, aes(PC1, PC2, label = rownames(dat))) +
        y = str_c("PC2 (", pc2_var, "%)")) + 
   theme_bw()
 
-plotname <- str_c('Results/Fraser_Fir_MeJa_needles_PCA.', today, '.png')
+plotname <- str_c('Results/Figures/Fraser_Fir_MeJa_needles_PCA.', today, '.png')
 
-ggsave(plotname, g)
+ggsave(plotname, g, width = 2400, height = 2400, units = 'px')
